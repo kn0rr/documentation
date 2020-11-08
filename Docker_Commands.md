@@ -19,6 +19,7 @@
 - **docker build -t `<YourDockerID>/<repo|Project name>:<version>` .** : Build and tag the image in the working directory. **Example for docker build:** `docker build -t kn0rr/redis-server:latest .` and after that start the container with `docker run kn0rr/redis-server`
 
 > General Note: While using the containerID you could either use the whole ID `b642304fd44cf6286dca7518dd2567bca111cca39ee900d43634a88fc810e248` or  just take some characters from the beginning `b642304fd` because this should be mostly unique and docker will take the missing characters on its own 
+
 ## Inspecting Container
 - **docker ps** : Showing all running containers
 - **docker ps --all** : Showing all containers which has created anytime on this machine

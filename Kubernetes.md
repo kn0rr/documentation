@@ -87,9 +87,89 @@ docker push kn0rr/multi-docker-client:v5
 kubectl set image deployment/client-deployment client=kn0rr/multi-docker-client:v5
 ````
 
-## Mulit-Container App with Kubernetes
+## Combine two config files into one
+
+````yml
+# you can combine confige files and put them together with an ---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: server-deployment
+spec:
+    replicas: 3
+    selector:
+        matchLabels:
+            component: server
+    template:
+        metadata:
+            labels:
+                component: server
+        spec:
+            containers:
+                - name: server
+                  image: kn0rr/multi-k8s-server
+                  ports:
+                    - containerPort: 5000
+---
+    apiVersion: v1
+    kind: Service
+    metadata:
+        name: server-cluster-ip-Service
+    spec:
+        type: ClusterIP
+        selector: 
+            component: server
+        ports:
+            - port: 5000
+              targetPort: 5000
+
+````
+
+# Mulit-Container App with Kubernetes
 
 ### Architecture
 
 ![Multi-ContainerApp](img/k8s_multiContainerApp.svg)
+
+### Storage Issues
+
+![StorageIssues](img/k8s_StorageIssues.svg)
+
+### K8s Volumes
+
+There exists 3 Types of "Volumes" which Kubernetes is aware of:
+1. Volumes: Storage tied to the POD. 
+
+2. Persistent Volumes: Storage outside of the Pod
+ 
+3. Persistent Volume  Claims: It is not a actual instance of Storage instead it is something we attach to a pod config. Kubernetes is trying to find a statical or dynamical provisioned Perstistent volume to meet the requirement of this claim.
+
+![K8sVolumes](img/k8s-volumes.svg)
+
+
+
+### Persistent Volume Claims
+
+It is not a actual instance of Storage instead it is something we attach to a pod config. Kubernetes is trying to find a statical or dynamical provisioned Perstistent volume to meet the requirement of this claim.
+
+````yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+    name: database-persistent-volume-claim
+spec:
+    accessModes:
+        - ReadWriteOnce
+    resources:
+        requests:
+            storage: 2Gi
+````
+
+#### Access Modes
+
+ 1. ReadWriteOnce: Can be used by a **single node**
+
+ 2. ReadOnlyMany: **Multiple nodes** can **read** from this
+
+ 3. ReadWriteMany: Can be **read and written** to by **many nodes**
 
