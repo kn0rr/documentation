@@ -2,10 +2,16 @@ docs_list_title: Wiki
 docs:
 
 - title: Docker Commands
-  url: Docker_Commands.md
+  url: Docker_Commands
 
 - title: Docker Compose
-  url: Docker_Compose.md
+  url: Docker_Compose
 
 - title: Docker Image
-  url: Docker_Image.md
+  url: Docker_Image
+
+- title: Docker Workflow
+  url: Docker_Workflow
+
+- title: Kubernetes
+  url: Kubernetes
