@@ -1,17 +1,22 @@
-docs_list_title: Wiki
+docs_list_title: Navigation
 docs:
 
-- title: Docker Commands
-  url: Docker_Commands
+- title: Docker
+  subfolderitems:
+     
+    - page: Docker Commands
+      url: Docker_Commands
 
-- title: Docker Compose
-  url: Docker_Compose
+    - page: Docker Compose
+      url: Docker_Compose
 
-- title: Docker Image
-  url: Docker_Image
+    - page: Docker Image
+      url: Docker_Image
 
-- title: Docker Workflow
-  url: Docker_Workflow
+    - page: Docker Workflow
+      url: Docker_Workflow
 
 - title: Kubernetes
-  url: Kubernetes
+  subfolderitems:
+    - page: Kubernetes
+      url: Kubernetes

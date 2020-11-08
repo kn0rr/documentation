@@ -8,7 +8,7 @@
 
 We used for docker-compose and the deployment to AWS a config file to describe what we want to do. The same applies for Kubernetes.
 
-![Config-files](img/Config-files.svg)
+![Config-files](img/Config-Files.svg)
 
 
 So to transfer the knowledge we have from the docker-compose file take a look at the following:

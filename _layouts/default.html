@@ -23,11 +23,14 @@
           <h2 id="project_tagline">{{ site.description | default: site.github.project_tagline }}</h2>
         <section style="background-color: white;">
           <h2>{{ site.data.navigationlist.docs_list_title }}</h2>
-            <ul>
-                {% for item in site.data.navigationlist.docs %}
-                 <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-                {% endfor %}
-            </ul>
+                {% for item in site.data.samplelist.doc %}
+                <h3>{{ item.title }}</h3>
+                  <ul>
+                    {% for entry in item.subfolderitems %}
+                      <li><a href="{{ entry.url }}">{{ entry.page }}</a></li>
+                    {% endfor %}
+                  </ul>
+              {% endfor %}
         </section>
           {% if site.show_downloads %}
             <section id="downloads">
