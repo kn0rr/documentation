@@ -20,7 +20,7 @@ services:
         ports:
             - "4001:8081"
 ````
-![Docker-Compose](img/Docker-compose.svg)
+![Docker-Compose](img/docker-compose.svg)
 
 Every Container specified in this YAML file will be created in the **same network**, so the containers have access to each other and you don't need to specify any ports to open for each other!
 
