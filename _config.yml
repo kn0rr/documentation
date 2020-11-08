@@ -1,1 +1,4 @@
 theme: jekyll-theme-slate
+title: Wiki
+description: A Wiki which shows the results of different courses
+show_downloads: true
