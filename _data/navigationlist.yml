@@ -3,7 +3,6 @@ docs:
 
 - title: Docker
   subfolderitems:
-    
     - page: Docker Commands
       url: Docker_Commands
 
@@ -20,3 +19,17 @@ docs:
   subfolderitems:
     - page: Kubernetes
       url: Kubernetes
+- tilte: ServiceNow
+    subfolderitems:
+
+      - page: ServiceNow ITSM Introduction
+        url: SnowITSM
+      
+        - page: ServiceNow ITSM Personas
+        url: SnowITSMPersonas
+      
+        - page: ServiceNow ITSM Terminology
+        url: SnowITSMTerminology
+      
+        - page: ServiceNow ITSM Summary
+        url: SnowITSMSummary
