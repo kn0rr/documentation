@@ -19,9 +19,9 @@ docs:
   subfolderitems:
     - page: Kubernetes
       url: Kubernetes
-- tilte: ServiceNow
-    subfolderitems:
 
+- title: ServiceNow
+    subfolderitems:
       - page: ServiceNow ITSM Introduction
         url: SnowITSM
       
