@@ -21,15 +21,15 @@ docs:
       url: Kubernetes
 
 - title: ServiceNow
-    subfolderitems:
-      - page: ServiceNow ITSM Introduction
-        url: SnowITSM
+  subfolderitems:
+    - page: ServiceNow ITSM Introduction
+      url: SnowITSM
       
-        - page: ServiceNow ITSM Personas
-        url: SnowITSMPersonas
+    - page: ServiceNow ITSM Personas
+      url: SnowITSMPersonas
       
-        - page: ServiceNow ITSM Terminology
-        url: SnowITSMTerminology
+    - page: ServiceNow ITSM Terminology
+      url: SnowITSMTerminology
       
-        - page: ServiceNow ITSM Summary
-        url: SnowITSMSummary
+    - page: ServiceNow ITSM Summary
+      url: SnowITSMSummary
