@@ -33,3 +33,10 @@ docs:
       
     - page: ServiceNow ITSM Summary
       url: SnowITSMSummary
+
+    - page: ServiceNow ITSM Operate Personas
+      url: OperatePersonas
+
+    - page: ServiceNow ITSM Operate Terminology
+      url: OperateTerminology
+
