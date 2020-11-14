@@ -43,6 +43,22 @@ Usage of differenet types:
 
 ![Services](img/Services_Detail.svg)
 
+### Secret in Detail:
+
+We need to make sure to create the Secret manually in every environment, because it is a imperative command we are going to use.
+
+There exists three secret types:
+- **generic**: Indicates that we are saving some arbitrary number of key-value pairs together
+- **docker-registry**: Set up some type of authentication with a custom docker registry
+- **tls**: to store a set off tls keys
+
+````docker
+kubectl create secret generic <secret_name> --from-literal key=value
+
+# Example:
+kubectl create secret generic pgpassword --from-literal PGPASSWORD=password123
+````
+
 ### API Concept
 
  In Kubernetes the API version defines a different set of Objects which can be used, so its necessary to know which Object you want to create to specify the API Version:
@@ -127,7 +143,7 @@ spec:
 
 # Mulit-Container App with Kubernetes
 
-### Architecture
+## Architecture
 
 ![Multi-ContainerApp](img/k8s_multiContainerApp.svg)
 
@@ -173,3 +189,41 @@ spec:
 
  3. ReadWriteMany: Can be **read and written** to by **many nodes**
 
+#### Storage Class Options
+
+An overview of possible Storage class options can be found here:
+https://kubernetes.io/docs/concepts/storage/storage-classes/
+
+## Setting up Ingress
+
+Link to the documentation: https://kubernetes.github.io/ingress-nginx/deploy/#provider-specific-steps
+
+We need to first run for Docker Desktop :
+
+````docker
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.41.2/deploy/static/provider/cloud/deploy.yaml
+````
+
+### Setting up Kubernetes Dashboard
+
+File was downloaded from: https://github.com/kubernetes/dashboard
+
+via (on Gitbash): 
+
+````docker
+curl -O https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.4/aio/deploy/recommended.yaml
+````
+
+and than applied to cluster
+
+````docker
+kubectl apply -f recommended.yaml
+````
+
+and then started via:
+
+````docker
+kubectl proxy
+````
+
+it can than be accessed via: http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
