@@ -4,16 +4,16 @@ docs:
 - title: Docker
   subfolderitems:
     - page: Docker Commands
-      url: Docker_Commands
+      url: docker/Docker_Commands
 
     - page: Docker Compose
-      url: Docker_Compose
+      url: docker/Docker_Compose
 
     - page: Docker Image
-      url: Docker_Image
+      url: docker/Docker_Image
 
     - page: Docker Workflow
-      url: Docker_Workflow
+      url: docker/Docker_Workflow
 
 - title: Kubernetes
   subfolderitems:
