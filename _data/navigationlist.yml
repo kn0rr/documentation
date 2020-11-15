@@ -7,13 +7,13 @@ docs:
       url: docker/Docker_Commands
 
     - page: Docker Compose
-      url: docker/Docker_Compose
+      url: Docker_Compose
 
     - page: Docker Image
-      url: docker/Docker_Image
+      url: Docker_Image
 
     - page: Docker Workflow
-      url: docker/Docker_Workflow
+      url: Docker_Workflow
 
 - title: Kubernetes
   subfolderitems:
