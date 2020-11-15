@@ -227,3 +227,16 @@ kubectl proxy
 ````
 
 it can than be accessed via: http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+
+### Setting up Travis for Google
+
+Overview:
+
+![TravisGoogle](img/Travis_config_Google.svg)
+
+Get Travis to work with Google:
+
+![TravisServiceAccount](img/ServiceAccount.svg)
+
+Install Travis CLI on Docker to work with it
+![TravisCLI](img/TravisCIDocker.svg)
