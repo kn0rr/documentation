@@ -228,6 +228,12 @@ kubectl proxy
 
 it can than be accessed via: http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 
+## Starting with Google Deployment
+
+### Architecture on Google:
+
+![GoogleArchitecture](img/GoogleArchitecture.svg)
+
 ### Setting up Travis for Google
 
 Overview:
@@ -239,4 +245,164 @@ Get Travis to work with Google:
 ![TravisServiceAccount](img/ServiceAccount.svg)
 
 Install Travis CLI on Docker to work with it
+
 ![TravisCLI](img/TravisCIDocker.svg)
+
+````docker
+docker run -it -v %cd%:/app ruby:2.4 sh
+````
+
+> %cd% is the same as $(pwd) on linux side and prints the working directory which is used as the volume for the container
+
+In the upcoming shell follow the next steps:
+
+``````sh
+gem install travis
+travis login --com --github-token <github-token> --debug --explode
+travis encrypt-file --com service-account.json -r kn0rr/multi-k8s
+``````
+
+After the encryption copy the openssl line into the `.travis.yml` file in the before install section.
+
+**Delete the service-account.json -> THIS IS REALLY IMPORTANT**
+
+> Can run the same on windows after installing travis-cli via chocolatey
+
+Add additional configuration for google in the .travis.yml file, at the end it should look like this:
+````sh
+sudo: required
+services:
+    - docker
+before_install:
+    - openssl aes-256-cbc -K $encrypted_9f3b5599b056_key -iv $encrypted_9f3b5599b056_iv -in service-account.json.enc -out service-account.json -d
+    - curl https://sdk.cloud.google.com | bash >/dev/null;
+    - source $HOME/google-cloud-sdk/path.bash.inc
+    - gcloud components update kubectl
+    - gcloud auth activate-service-account --key-file service-account.json
+    - glcoud config set project multi-k8s-295615
+    - gcloud config set compute/zone europe-west1-b
+    - gcloud container clusters get-credentials multi-cluster
+ ````
+
+ Next step you should add login configuration to Docker Hub:
+
+ 1. Add follwoing to the `.travis.yml` -File in before_install:
+    ````sh
+        - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+    ````
+
+ 2. Add `$DOCKER_PASSWORD` and `$DOCKER_USERNAME` to the Environment Variable at the Travis-Cli Repo
+
+
+ Next steps:
+ 1. build test container
+ 
+ 2. Run the Test
+ 
+ 3. Add deploy section where we define a script which will do the Docker builds for the production stuff
+ 
+ 4. Add deploy.sh into project root path and add the build commands in deploy.sh
+    - We will tag the images with latest (This is useful for other developers which want to use our project so they can use the `latest`- image instead of the SHA value) and with an unique identifier where we use the Git SHA, so that we can easily identify if the image has changed over time
+    - To enable this we need to make the GIT SHA available as an environment variable in the `.travis.yml` file
+ 
+ The finished ``deploy.sh` looks as following:
+
+ ````sh
+ docker build -t kn0rr/multi-k8s-client:latest -t kn0rr/multi-k8s-client:$SHA -f ./client/Dockerfile ./client
+docker build -t kn0rr/multi-k8s-server:latest -t kn0rr/multi-k8s-server:$SHA -f ./server/Dockerfile ./server
+docker build -t kn0rr/multi-k8s-worker:latest -t kn0rr/multi-k8s-worker:$SHA -f ./worker/Dockerfile ./worker
+docker push kn0rr/multi-k8s-client:latest
+docker push kn0rr/multi-k8s-client:$SHA
+docker push kn0rr/multi-k8s-server:latest
+docker push kn0rr/multi-k8s-server:$SHA
+docker push kn0rr/multi-k8s-worker:latest
+docker push kn0rr/multi-k8s-worker:$SHA
+kubectl apply -f k8s
+kubectl set image deployments/server-deployment server= kn0rr/multi-k8s-server:$SHA
+kubectl set image deployments/server-deployment client= kn0rr/multi-k8s-client:$SHA
+kubectl set image deployments/server-deployment worker= kn0rr/multi-k8s-worker:$SHA
+ ````
+
+The finished `.travis.yml`-file looks like:
+
+ ````sh
+sudo: required
+services:
+    - docker
+# Define GIT SHA as global variable to tag our images later with this version
+# Cloud...: Make sure that it not show any prompts because we cannot handle this in an CI/CD environment
+env:
+    global:
+        - SHA=$(git rev-parse HEAD)
+        - CLOUDSDK_CORE_DISABLE_PROMPTS=1
+before_install:
+    - openssl aes-256-cbc -K $encrypted_9f3b5599b056_key -iv $encrypted_9f3b5599b056_iv -in service-account.json.enc -out service-account.json -d
+    - curl https://sdk.cloud.google.com | bash >/dev/null;
+    - source $HOME/google-cloud-sdk/path.bash.inc
+    - gcloud components update kubectl
+    - gcloud auth activate-service-account --key-file service-account.json
+    - glcoud config set project multi-k8s-295615
+    - gcloud config set compute/zone europe-west1-b
+    - gcloud container clusters get-credentials multi-cluster
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+    - docker build -t kn0rr/react-test -f ./client/Dockerfile.dev ./client
+script:
+    - docker run -e CI=true kn0rr/react-test npm test
+
+deploy:
+    provider: script
+    script: bash ./deploy.sh
+    on:
+        branch: master
+ ````
+
+We still need to do some changes on Google Cloud: 
+
+1. Add PGPASSWORD secret to Goolge Cloud via:
+    - Enable Cloud shell on the top right at Google Cloud
+    - Run following commands:
+        ````sh
+        gcloud config set project multi-k8s-295615
+        gcloud config set compute/zone europe-west1-b
+        gcloud container clusters get-credentials multi-cluster
+        kubectl create secret generic pgpassword --from-literal PGPASSWORD=<password>
+        ````
+2. Add Helm ([DOC](https://helm.sh/docs/helm/)) v3 to GoogleCloud:
+    ````sh
+    curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+    chmod 700 get_helm.sh
+    ./get_helm.sh
+    ````
+3. Install ingress-nginx with Helm :
+    ````sh
+    helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+    helm install my-release ingress-nginx/ingress-nginx
+    ````
+
+And then we can push our code to github and travis will build our project.
+
+## Example of doing changes to the project
+
+We will follow this workflow: 
+
+![Change-Workflow](img/Deploy_Changes_Steps.svg)
+
+1. Checkout Branch:
+    ````git
+    git checkout -b devel
+    ````
+
+2. Make changes in Client e. g. changes in App.js naming of Link
+
+3. Push Branch
+    ````git
+    git add .
+    git commit -m "Change App.js Link name"
+    git push origin devel
+    ````
+4. Go to Github->To the Project-> Pull requests-> Create pull request -> Compare devel with master-> Create Pull Request
+    ![GitPR](img/git_pr.png)
+
+5. Travis will test the branch 
+
+6. After complete and succesfull testing we can merge the branches (and delete it aftwards if we want)

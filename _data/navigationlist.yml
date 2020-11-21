@@ -4,7 +4,7 @@ docs:
 - title: Docker
   subfolderitems:
     - page: Docker Commands
-      url: docker/Docker_Commands
+      url: Docker_Commands
 
     - page: Docker Compose
       url: Docker_Compose
