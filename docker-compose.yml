@@ -1,0 +1,8 @@
+version: '3'
+services:
+  jekyll-server:
+    build: '.'
+    ports: 
+      - "4005:4000"
+    volumes: 
+      - .:/srv/jekyll
