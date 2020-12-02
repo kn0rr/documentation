@@ -23,7 +23,7 @@ docs:
 - title: ServiceNow
   subfolderitems:
     - page: ServiceNow ITSM Introduction
-      url: /snow/SnowITSM
+      url: documentation/snow/SnowITSM
       
     - page: ServiceNow ITSM Personas
       url: SnowITSMPersonas
