@@ -41,5 +41,19 @@ docs:
       url: OperateTerminology
 - title: JavaScript
   subfolderitems:
-    - page: JavaScript Introduction
-      url: JavaScriptIntro
+    - page: Primitive Types 
+      url: PrimitiveTypes
+    - page: Math Object
+      url: MathObject
+    - page: Type Of
+      url: TypeOf
+    - page: ParseInt and ParseFloat
+      url: ParseIntAndParseFloat
+    - page: Operators
+      url: JSOperators
+    - page: Arrays
+      url: JSArray
+    - page: Objects
+      url: JSObject
+    - page: Loops
+      url: JSLoops
