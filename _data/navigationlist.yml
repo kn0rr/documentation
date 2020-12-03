@@ -23,7 +23,7 @@ docs:
 - title: ServiceNow
   subfolderitems:
     - page: ServiceNow ITSM Introduction
-      url: documentation/snow/SnowITSM
+      url: SnowITSM
       
     - page: ServiceNow ITSM Personas
       url: SnowITSMPersonas
@@ -57,3 +57,11 @@ docs:
       url: JSObject
     - page: Loops
       url: JSLoops
+    - page: Functions
+      url: JSFunctions
+    - page: Apply Functions to Collection of Data
+      url: JSApplyFunctionsToCollectionsOfData
+    - page: About Default Parameters, Spread,  Rest and Destructing
+      url: JSUsefulThings
+    - page: Objects Advanced
+      url: JSObjectsAdvanced
