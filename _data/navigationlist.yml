@@ -65,3 +65,9 @@ docs:
       url: JSUsefulThings
     - page: Objects Advanced
       url: JSObjectsAdvanced
+    - page: DOM
+      url: JSDOM
+    - page: DOM Selecting
+      url: JSDOMSelecting
+    - page: DOM Manipulation
+      url: JSDOMManipulation
