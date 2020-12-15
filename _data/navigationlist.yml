@@ -71,3 +71,5 @@ docs:
       url: JSDOMSelecting
     - page: DOM Manipulation
       url: JSDOMManipulation
+    - page: DOM Events
+      url: JSDOMEvents
