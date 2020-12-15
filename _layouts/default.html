@@ -21,7 +21,8 @@
 
           <h1 id="project_title">{{ site.title | default: site.github.repository_name }}</h1>
           <h2 id="project_tagline">{{ site.description | default: site.github.project_tagline }}</h2>
-        <section style="background-color: white;">
+        <!--switched to sidebar-->
+          <!-- <section style="background-color: white;">
           <h2>{{ site.data.navigationlist.docs_list_title }}</h2>
                 {% for item in site.data.navigationlist.docs %}
                 <h3>{{ item.title }}</h3>
@@ -32,6 +33,7 @@
                   </ul>
               {% endfor %}
         </section>
+      -->
           {% if site.show_downloads %}
             <section id="downloads">
               <a class="zip_download_link" href="{{ site.github.zip_url }}">Download this project as a .zip file</a>
