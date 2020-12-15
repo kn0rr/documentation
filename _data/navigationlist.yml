@@ -35,10 +35,10 @@ docs:
       url: SnowITSMSummary
 
     - page: ServiceNow ITSM Operate Personas
-      url: OperatePersonas
+      url: SnowOperatePersonas
 
     - page: ServiceNow ITSM Operate Terminology
-      url: OperateTerminology
+      url: SnowOperateTerminology
 - title: JavaScript
   subfolderitems:
     - page: Primitive Types 
