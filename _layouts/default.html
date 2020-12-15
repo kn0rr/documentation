@@ -40,7 +40,17 @@
           {% endif %}
         </header>
     </div>
-
+    <div id="sidenav">
+        <h2>{{ site.data.navigationlist.docs_list_title }}</h2>
+              {% for item in site.data.navigationlist.docs %}
+              <h3>{{ item.title }}</h3>
+                <ul>
+                  {% for entry in item.subfolderitems %}
+                    <li><a href="{{ entry.url }}">{{ entry.page }}</a></li>
+                  {% endfor %}
+                </ul>
+            {% endfor %}
+    </div>
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
