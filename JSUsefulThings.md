@@ -378,6 +378,8 @@ function print({
 }) {
   console.log(`${first} ${last}, ${title}`)
 }
+print(runner)
+// Eliud Kipchoge, Elder of the Order of the Golden Heart of Kenya
 
 const response = [
   'HTTP/1.1',
@@ -389,4 +391,7 @@ const response = [
 function parseResponse([protocol, statusCode, contentType]) {
   console.log(`Status: ${statusCode}`)
 }
+parseResponse(response)
+//Status: 200 OK
+
 ````

@@ -65,7 +65,7 @@ kubectl create secret generic pgpassword --from-literal PGPASSWORD=password123
 
  ![API-Version](img/K8s-API.svg)
 
- ## Commands
+## Commands
 
 ![apply-config-file](img/K8s_commands.svg)
 
