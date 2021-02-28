@@ -22,7 +22,7 @@
   }
   
   /* Active/current link */
-.sidebar a.active {
+.sidenav a.active {
   background-color: #4CAF50;
   color: white;
 }
@@ -41,25 +41,20 @@ div.content {
 
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
 @media screen and (max-width: 700px) {
-  .sidebar {
+  .sidenav {
     width: 100%;
     height: auto;
     position: relative;
   }
-  .sidebar a {float: left;}
+  .sidenav a {float: left;}
   div.content {margin-left: 0;}
 }
 
 /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
 @media screen and (max-width: 400px) {
-  .sidebar a {
+  .sidenav a {
     text-align: center;
     float: none;
   }
 }
   
-  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
