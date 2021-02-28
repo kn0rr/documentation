@@ -262,6 +262,8 @@ printBio(); //THIS refers to window object which results in an error
 // this.fullName is not a function
 
 ````
+![ValueOfThis](img/javaScript/thisValue.png)
+
 
 ### This Example white Arrow Function
 

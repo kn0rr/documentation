@@ -63,7 +63,7 @@ docs:
       url: JSApplyFunctionsToCollectionsOfData
     - page: About Default Parameters, Spread,  Rest and Destructing
       url: JSUsefulThings
-    - page: Objects Advanced
+    - page: Objects Advanced and This Keyword
       url: JSObjectsAdvanced
     - page: DOM
       url: JSDom
