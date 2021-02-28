@@ -74,4 +74,10 @@ docs:
     - page: DOM Events
       url: JSDOMEvents
     - page: Asynchronous Code, Callbacks & Pomises
-      url: AsyncCallbackPromise
+      url: JSAsyncCallbackPromise
+    - page: Making HTTP Requests
+      url: JSHttpRequest
+    - page: Async & Await JS Magic
+      url: JSAsyncAndAwait
+    - page: Prototypes, Classes & The New Operators
+      url: JSProtoTypesClasseNewOperator
