@@ -81,5 +81,7 @@ docs:
       url: JSAsyncAndAwait
     - page: Prototypes, Classes & The New Operators
       url: JSProtoTypesClasseNewOperator
+    - page: JavaScript SVG
+      url: JSSvg
     - page: Debugging Node JS
       url: JSDebuggingNode
