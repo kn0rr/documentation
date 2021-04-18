@@ -91,4 +91,12 @@ docs:
   subfolderitems:
     - page: Introduction
       url: React_Introduction
+    - page: Create Reusable Component
+      url: React_ReusableComponent
+    - page: React Class vs React Function
+      url: React_ClassVsFunction
+    - page: React State
+      url: React_State
+    - page: React Lifecycle Methods
+      url: React_LifecycleMethod
 
