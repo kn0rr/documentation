@@ -85,7 +85,10 @@ docs:
       url: JSSvg
     - page: Debugging Node JS
       url: JSDebuggingNode
+    - page: Different Methods of Image Storage
+      url: JSStoringImages
 - title: React
   subfolderitems:
     - page: Introduction
       url: React_Introduction
+
