@@ -99,8 +99,9 @@ docs:
       url: React_State
     - page: React Lifecycle Methods
       url: React_LifecycleMethod
+    - page: React Events
+      url: React_Events
 - title: Openhab
-    subfolderitems:
-      - page: Openhab
-        url: openhab
-
+  subfolderitems:
+  - page: Openhab
+    url: openhab
