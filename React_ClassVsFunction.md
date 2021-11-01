@@ -1,6 +1,6 @@
 # React Class vs React Function
 
-![ClassVsFunc](img/react/ClassVsFunc.png)
+![ClassVsFunc](img/react/classVsFunc.png)
 
 ## Class Components
 
