@@ -22,8 +22,8 @@ permit_join: true
 mqtt:
   base_topic: zigbee2mqtt
   server: mqtt://localhost:1883
-  user: openhabian
-  password: ''
+  user: <user>
+  password: '<password>'
   client_id: Zigbee
   reject_unauthorized: true
   include_device_information: true
@@ -31,11 +31,11 @@ serial:
   port: /dev/ttyACM0
   disable_led: false
 devices:
-  '0x00158d0006b0fbc2':
+  '<DeviceID 1>':
     friendly_name: TempSensor1
-  '0x00158d0006a04b6c':
+  '<DeviceID 2>':
     friendly_name: TempSensor2
-  '0x00158d0006a0709b':
+  '<DeviceID 3>':
     friendly_name: TempBad
 ````
 

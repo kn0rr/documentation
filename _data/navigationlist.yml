@@ -101,6 +101,8 @@ docs:
       url: React_LifecycleMethod
     - page: React Events
       url: React_Events
+    - page: How to fix issues with context or the 'this'-keyword
+      url: React_This
 - title: Openhab
   subfolderitems:
   - page: Openhab
