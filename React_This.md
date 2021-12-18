@@ -67,7 +67,7 @@ onFormSubmit = event =>{
 [...]
 
 /************
-Third way: Use Arrow directly in the props
+Third way: Use Arrow function directly in the props
 ************/
 [...]
  <form onSubmit={(e)=>this.onFormSubmit(e)} className="ui form">

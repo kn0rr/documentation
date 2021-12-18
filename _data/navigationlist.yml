@@ -103,7 +103,7 @@ docs:
       url: React_Events
     - page: How to fix issues with context or the 'this'-keyword
       url: React_This
-- title: Openhab
-  subfolderitems:
-  - page: Openhab
-    url: openhab
+    - page: React Parent Child Communication
+      url: React_ParentChildCommunication
+    - page: Axios vs Fetch
+      url: React_AxiosFetch
