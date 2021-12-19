@@ -3,7 +3,7 @@
 React itself is only a library to showing content or html to the user and handling User interaction.
 To handle network request we need something else.
 
-![AxisoRequest](img/react/Axios.png)
+![AxisoRequest](img/react/axios.png)
 
 There exists some different ways to handle that.
 
