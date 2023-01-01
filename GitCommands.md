@@ -22,4 +22,7 @@ git branch -d <feature-branch>
 //Delete remote branch 
 git push origin --delete <feature-branch>
 
+//Git Reset first locally and push to remote
+git reset --hard <commitID>
+git push -f
 ``````

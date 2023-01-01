@@ -105,5 +105,9 @@ docs:
       url: React_This
     - page: React Parent Child Communication
       url: React_ParentChildCommunication
-    - page: Axios vs Fetch
-      url: React_AxiosFetch
+    - page: API - Axios vs Fetch
+      url: React_APIAxiosFetch
+    - page: React Refs
+      url: React_Refs
+    - page: React Hooks
+      url: React_Hooks
