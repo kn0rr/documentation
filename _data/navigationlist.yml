@@ -111,3 +111,7 @@ docs:
       url: React_Refs
     - page: React Hooks
       url: React_Hooks
+    - page: Ethical Hacking
+      url: EthicalHacking
+    - page: Microservice Introduction
+      url: MicroservicePart1
