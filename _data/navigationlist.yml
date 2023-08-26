@@ -1,6 +1,9 @@
 docs_list_title: Navigation
 docs:
-
+- title: Microservices
+  subfolderitems:
+    - page: Microservice Introduction
+      url: MicroservicePart1
 - title: Docker
   subfolderitems:
     - page: Docker Commands
@@ -111,7 +114,8 @@ docs:
       url: React_Refs
     - page: React Hooks
       url: React_Hooks
+- title: Ethical Hacking
+  subfolderitems:
     - page: Ethical Hacking
       url: EthicalHacking
-    - page: Microservice Introduction
-      url: MicroservicePart1
+ 

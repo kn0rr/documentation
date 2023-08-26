@@ -35,8 +35,18 @@ The Data Management is **THE** big problem of microservices, because we want to 
 
 We use two different strategies to communicate between different Microservices.
 
-![DBMicro](img/microservice/sync.png)
+![sync](img/microservice/sync.png)
 
-**Synchronouse Communication**
+## Synchronouse Communication
 
-![DBMicro](img/microservice/SyncCom.png)
+A possible example how synchronouse communication may work in a mciroservice environement:
+
+![SyncCom](img/microservice/SyncCom.png)
+
+This leads to the following Pro's and Con's of Synchronouse Communication:
+
+![SyncComProsCons.png](img/microservice/SyncComProsCons.png)
+
+The more a Microservice needs to communicate to other Services the more complex the whole architecture might become:
+
+![SyncReq](img/microservice/SyncReq.png)
