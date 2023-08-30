@@ -2,8 +2,10 @@ docs_list_title: Navigation
 docs:
 - title: Microservices
   subfolderitems:
-    - page: Microservice Introduction
+    - page: Introduction
       url: MicroservicePart1
+    - page: Service Communication Example
+      url: MicroservicePart2
 - title: Docker
   subfolderitems:
     - page: Docker Commands

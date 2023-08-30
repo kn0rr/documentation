@@ -37,16 +37,44 @@ We use two different strategies to communicate between different Microservices.
 
 ![sync](img/microservice/sync.png)
 
-## Synchronouse Communication
+## Synchronous Communication
 
-A possible example how synchronouse communication may work in a mciroservice environement:
+A possible example how synchronous communication may work in a mciroservice environement:
 
 ![SyncCom](img/microservice/SyncCom.png)
 
-This leads to the following Pro's and Con's of Synchronouse Communication:
+This leads to the following Pro's and Con's of Synchronous Communication:
 
 ![SyncComProsCons.png](img/microservice/SyncComProsCons.png)
 
 The more a Microservice needs to communicate to other Services the more complex the whole architecture might become:
 
 ![SyncReq](img/microservice/SyncReq.png)
+
+## Asynchronous Communication
+
+There exists two different ways of asyncronous communcation.
+
+**First Way: Event-Based Communication**
+
+The event-based communication is not a good way for communication because it shares all the downsides of synchronous communcation and has additional downsides (like enhanced complexity).
+
+![Event](img/microservice/event.png)
+
+**Second Way: Event-Based Enhanced**
+
+First of all specify what exactly is necessary for each service to provide the functionality, for example: 
+
+![ServiceD](img/microservice/ServiceD.png)
+
+Then you can use the event-based communication to get changed data into your individual services: 
+
+![Async2](img/microservice/Async2.png)
+
+![Async3](img/microservice/Async3.png)
+
+![Async3](img/microservice/Async4.png)
+
+In this way you make sure, that Service D always has the right data to show the ordered products for each user without relying on other services during the execution of Service D.
+
+![AsyncComProsCons.png](img/microservice/AsyncComProsCons.png)
