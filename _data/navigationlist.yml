@@ -1,5 +1,9 @@
 docs_list_title: Navigation
 docs:
+- title: AWS
+  subfolderitems:
+    - page: AWS Introduction
+      url: AWS_Introduction
 - title: Microservices
   subfolderitems:
     - page: Introduction
@@ -120,4 +124,5 @@ docs:
   subfolderitems:
     - page: Ethical Hacking
       url: EthicalHacking
+
  
