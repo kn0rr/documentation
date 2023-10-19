@@ -3,7 +3,7 @@ docs:
 - title: AWS
   subfolderitems:
     - page: AWS Introduction
-      url: AWS_Introduction
+      url: Aws_Introduction
 - title: Microservices
   subfolderitems:
     - page: Introduction
