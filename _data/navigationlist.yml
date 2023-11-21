@@ -53,13 +53,13 @@ docs:
 - title: JavaScript
   subfolderitems:
     - page: Primitive Types 
-      url: PrimitiveTypes
+      url: JSPrimitiveTypes
     - page: Math Object
-      url: MathObject
+      url: JSMathObject
     - page: Type Of
-      url: TypeOf
+      url: JSTypeOf
     - page: ParseInt and ParseFloat
-      url: ParseIntAndParseFloat
+      url: JSParseIntAndParseFloat
     - page: Operators
       url: JSOperators
     - page: Arrays
