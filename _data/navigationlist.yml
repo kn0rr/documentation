@@ -4,6 +4,8 @@ docs:
   subfolderitems:
     - page: AWS Introduction
       url: Aws_Introduction
+    - page: AWS EC2
+      url: Aws_EC2
 - title: Microservices
   subfolderitems:
     - page: Introduction
