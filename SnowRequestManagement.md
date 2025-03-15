@@ -1,6 +1,6 @@
 # Request Management
 
-## Request Management Goals 
+## Request Management Goals
 
 - Ensure all users in the organization are made aware of and can easily request all services offered by IT
 - Provide a consistent and repeatable process for requesting and fulfilling services to ensure that users expectations are clearly set and continually met, thus maintaining high customer satisfaction levels
@@ -49,15 +49,14 @@ After submitting the order you see for each item the request number, description
 ### Approval
 
 Some basic rules:
+
 - If the RITM is preapproved, fulfillment can begin immediatly upon submittal of the request
 
 - If there are multiple items in the request, the rejection of one RITM does not affect the fulfillment of other RITMs.
 
-
 ### Fulfillment
 
 Tasks can be viewed under **Service Desk** -> My Work/My Groups Work
-
 
 ### Closure
 
@@ -66,9 +65,10 @@ Automatic closure of parent elements:
 - When all tasks are marked as complete the parent RITM is set to Complete by the workflow.
 - When all RITM are set to complete the parent request is set to Complete by the workflow.
 
-> If the record in the Catalog Tasks tab has an Actual end date, that task is closed 
+> If the record in the Catalog Tasks tab has an Actual end date, that task is closed
 
 Closing States:
+
 - **Closed Complete:** Work completed as requested
 - **Closed Incomplete:** Work that was requested was partially completed (NOTES should clearly identify what was not completed and why!-> Manual task)
 - **Closed Rejected:** Work that was requested could not be completed(NOTES should clearly identify why!-> Manual task)
@@ -84,7 +84,7 @@ Closing States:
 6. Request Management application tracks the request of products and services from initial submission in the Service Catalog through closure of the request once it has been approved and fulfilled.
 7. Submittal is the first stage of the request management lifecycle. Process users and end users search the service catalog to place an order, fills out required order form and submits the request.
 8. A request can also be submitted through the service catalog application and from an incident record as well. Regardless of the specific item or items ordered, all requests for goods and services are structured similarly.
-9. Approval stage is where requests and/or requested items are approved or rejected. Once a request is submitted, a predefined approval workflow is launched for the overall request, followed by the individual requested items. 
+9. Approval stage is where requests and/or requested items are approved or rejected. Once a request is submitted, a predefined approval workflow is launched for the overall request, followed by the individual requested items.
 10. Approvals can be at the request level only or both at the request and requested item levels.
 11. After approval, the Fulfillment stage is when the work required to deliver the requested products / services is started and completed.
 12. Fulfillment stage is automatically initiated by the workflow when all the required approvals (if any) have been granted.
