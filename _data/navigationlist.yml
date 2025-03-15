@@ -31,25 +31,10 @@ docs:
     - page: Kubernetes
       url: Kubernetes
 
-- title: ServiceNow
+- title: Typescript
   subfolderitems:
-    - page: ServiceNow ITSM Introduction
-      url: SnowITSM
-      
-    - page: ServiceNow ITSM Personas
-      url: SnowITSMPersonas
-      
-    - page: ServiceNow ITSM Terminology
-      url: SnowITSMTerminology
-      
-    - page: ServiceNow ITSM Summary
-      url: SnowITSMSummary
-
-    - page: ServiceNow ITSM Operate Personas
-      url: SnowOperatePersonas
-
-    - page: ServiceNow ITSM Operate Terminology
-      url: SnowOperateTerminology
+    - page: Typescript Introduction
+      url: TS_Introduction
 - title: JavaScript
   subfolderitems:
     - page: Primitive Types 
@@ -126,5 +111,24 @@ docs:
   subfolderitems:
     - page: Ethical Hacking
       url: EthicalHacking
+- title: ServiceNow
+  subfolderitems:
+    - page: ServiceNow ITSM Introduction
+      url: SnowITSM
+      
+    - page: ServiceNow ITSM Personas
+      url: SnowITSMPersonas
+      
+    - page: ServiceNow ITSM Terminology
+      url: SnowITSMTerminology
+      
+    - page: ServiceNow ITSM Summary
+      url: SnowITSMSummary
+
+    - page: ServiceNow ITSM Operate Personas
+      url: SnowOperatePersonas
+
+    - page: ServiceNow ITSM Operate Terminology
+      url: SnowOperateTerminology
 
  
