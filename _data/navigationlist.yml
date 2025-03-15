@@ -35,6 +35,8 @@ docs:
   subfolderitems:
     - page: Typescript Introduction
       url: TS_Introduction
+    - page: Typescript Type
+      url: TS_Type
 - title: JavaScript
   subfolderitems:
     - page: Primitive Types 
