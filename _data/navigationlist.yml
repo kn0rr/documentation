@@ -37,6 +37,9 @@ docs:
       url: TS_Introduction
     - page: Typescript Type
       url: TS_Type
+    - page: Typescript Annotations vs Inference
+      url: TS_Annotations_Inference
+
 - title: JavaScript
   subfolderitems:
     - page: Primitive Types 
