@@ -33,18 +33,19 @@
 
   .toc {
     width: 300px; /* Set the width of the sidebar */
-    position: static;  
-    z-index: 1; /* Stay on top */
-    top: 0px; /* Stay at the top */
-    right: 0;
+    position: fixed;  
+    z-index: 2; /* Stay on top */
+    top: 20px; /* Stay at the top */
+    right:20px;
     background-color: #ffffff; 
     padding: 20px;
     border-radius: 25px;
     border: 2px solid #070707;
     overflow-x: hidden; /* Disable horizontal scroll */
     //padding-top: 220px;
-    clear:both;
-    display:block;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  //clear:both;
+    //display:block;
   }
   
   
